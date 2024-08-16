@@ -5,7 +5,8 @@ return { -- Useful plugin to show you pending keybinds.
     require('which-key').setup()
 
     -- Document existing key chains
-    require('which-key').add {
+    local wk = require('which-key')
+    wk.add({
       { '<leader>c', group = '[C]ode' },
       { '<leader>d', group = '[D]ocument' },
       { '<leader>r', group = '[R]ename' },
@@ -13,6 +14,13 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>w', group = '[W]orkspace' },
       { '<leader>t', group = '[T]oggle' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-    }
+    })
+
+    wk.add({
+      { "<leader>ma", "<Plug>(VM-Select-All)<Tab>",    desc = "Select All Words",   mode = { "n" } },
+      { "<leader>mr", "<Plug>(VM-Start-Regex-Search)", desc = "Start Regex Search", mode = { "n" } },
+      { "<leader>mp", "<Plug>(VM-Add-Cursor-At-Pos)",  desc = "Add Cursor at Pos",  mode = { "n" } },
+      { "<leader>mo", "<Plug>(VM-Toggle-Mappings)",    desc = "Toggle Mappings",    mode = { "n" } },
+    })
   end,
 }

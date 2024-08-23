@@ -35,6 +35,10 @@ vim.keymap.set('n', '<leader>k', function()
   vim.lsp.buf.hover()
 end, { noremap = true, silent = true })
 
+vim.keymap.set('n', '<leader>K', function()
+  vim.lsp.buf.signature_help()
+end, { noremap = true, silent = true })
+
 -- Quickfixc stuff
 vim.keymap.set('n', ']q', '<cmd>cnext<CR>zz', { noremap = true, silent = true })
 vim.keymap.set('n', '[q', '<cmd>cprev<CR>zz', { noremap = true, silent = true })

@@ -60,7 +60,7 @@ return { -- Autocompletion
         -- disallow_prefix_unmatching = true,
         -- disallow_symbol_nonprefix_matching = true,
       },
-
+      preselect = 'None',
       mapping = cmp.mapping.preset.insert {
         -- Scroll the documentation window [b]ack / [f]orward
         -- TODO(calco): What do these actually do lol

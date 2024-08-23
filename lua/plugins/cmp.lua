@@ -43,9 +43,22 @@ return { -- Autocompletion
           luasnip.lsp_expand(args.body)
         end,
       },
+      performance = {
+        debounce = 200,
+        throttle = 200,
+      },
       completion = {
-        autocomplete = false,
-        completeopt = 'menu,menuone,noinsert',
+        -- autocomplete = true,
+        completeopt = 'menu,menuone,noinsert,noselect',
+      },
+      matching = {
+        disallow_fuzzy_matching = false,
+        disallow_fullfuzzy_matching = false,
+        disallow_partial_fuzzy_matching = false,
+
+        -- disallow_partial_matching = false,
+        -- disallow_prefix_unmatching = true,
+        -- disallow_symbol_nonprefix_matching = true,
       },
 
       mapping = cmp.mapping.preset.insert {
@@ -130,7 +143,7 @@ return { -- Autocompletion
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        -- { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lsp_signature_help' },
       },
     }
   end,
